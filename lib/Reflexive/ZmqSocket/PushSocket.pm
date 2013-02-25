@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::PushSocket;
 {
-  $Reflexive::ZmqSocket::PushSocket::VERSION = '1.121730';
+  $Reflexive::ZmqSocket::PushSocket::VERSION = '1.130560';
 }
 
 #ABSTRACT: ZMQ_PUSH socket type based subclass
@@ -25,7 +25,7 @@ Reflexive::ZmqSocket::PushSocket - ZMQ_PUSH socket type based subclass
 
 =head1 VERSION
 
-version 1.121730
+version 1.130560
 
 =head1 DESCRIPTION
 

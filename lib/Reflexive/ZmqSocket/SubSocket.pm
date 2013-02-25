@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::SubSocket;
 {
-  $Reflexive::ZmqSocket::SubSocket::VERSION = '1.121730';
+  $Reflexive::ZmqSocket::SubSocket::VERSION = '1.130560';
 }
 
 #ABSTRACT: ZMQ_SUB socket type based subclass
@@ -25,7 +25,7 @@ Reflexive::ZmqSocket::SubSocket - ZMQ_SUB socket type based subclass
 
 =head1 VERSION
 
-version 1.121730
+version 1.130560
 
 =head1 DESCRIPTION
 

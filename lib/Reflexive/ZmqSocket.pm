@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket;
 {
-  $Reflexive::ZmqSocket::VERSION = '1.121730';
+  $Reflexive::ZmqSocket::VERSION = '1.130560';
 }
 
 #ABSTRACT: Provides a reflexy way to talk over ZeroMQ sockets
@@ -237,7 +237,7 @@ sub send {
 sub zmq_writable {
     my ($self, $args) = @_;
 
-    while ($self->buffer_count) {
+    MESSAGE: while ($self->buffer_count) {
         
         unless($self->getsockopt(ZMQ_EVENTS) & ZMQ_POLLOUT)
         {
@@ -273,7 +273,7 @@ sub zmq_writable {
                                 errstr => "$!",
                                 errfun => 'recv',
                             );
-                            last;
+                            last MESSAGE;
                         }
                         elsif($rc == 0)
                         {
@@ -281,7 +281,7 @@ sub zmq_writable {
                         }
                         elsif($rc == 1)
                         {
-                            next;
+                            next MESSAGE;
                         }
                     }
                     else
@@ -445,7 +445,7 @@ Reflexive::ZmqSocket - Provides a reflexy way to talk over ZeroMQ sockets
 
 =head1 VERSION
 
-version 1.121730
+version 1.130560
 
 =head1 SYNOPSIS
 
