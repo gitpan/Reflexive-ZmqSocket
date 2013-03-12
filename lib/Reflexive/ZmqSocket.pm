@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket;
 {
-  $Reflexive::ZmqSocket::VERSION = '1.130560';
+  $Reflexive::ZmqSocket::VERSION = '1.130710';
 }
 
 #ABSTRACT: Provides a reflexy way to talk over ZeroMQ sockets
@@ -109,9 +109,13 @@ after [qw/bind connect/] => sub {
     $self->resume_reading() unless $self->active;
 };
 
-after close => sub {
+before close => sub {
     my ($self) = @_;
-    $self->stop_reading if $self->active;
+    if($self->active)
+    {
+        $self->stop_reading;
+        $self->stop_writing;
+    }
 };
 
 sub _build_socket {
@@ -445,7 +449,7 @@ Reflexive::ZmqSocket - Provides a reflexy way to talk over ZeroMQ sockets
 
 =head1 VERSION
 
-version 1.130560
+version 1.130710
 
 =head1 SYNOPSIS
 
@@ -571,6 +575,10 @@ are delegated to this attribute:
     connect
     bind
 
+NOTE: close() is advised to stop polling the zmq_fd /before/ the call to the
+underlying zmq_close. This means that items in the L</buffer> may not be sent
+or owned by zmq and you are responsible for managing these items.
+
 =head1 PROTECTED_ATTRIBUTES
 
 =head2 active
@@ -607,6 +615,17 @@ The following methods are delegated to this attribute:
 This method is for sending messages through the L</socket>. It is non-blocking
 and will return the current buffer count.
 
+=head1 PROTECTED_METHODS
+
+=head2 initialize_endpoints
+
+This method attempts the defined L</endpoint_action> against the provided
+L</endpoints>. This method is called at BUILD if L</active> is true. To defer
+initialization, simply set L</active> to false.
+
+If the provided action against a particular endpoint fails, a connect_error
+event will be emitted
+
 =head1 PRIVATE_METHODS
 
 =head2 zmq_writable
@@ -631,15 +650,6 @@ message is emitted when a successful read occurs on the socket. When this event 
 =head2 multipart_message
 
 multipart_message is emitted when multipart message is read from the socket.  See L<Reflexive::ZmqSocket::ZmqMultiPartMessage> for more information.
-
-=protected_method initialize_endpoints
-
-This method attempts the defined L</endpoint_action> against the provided
-L</endpoints>. This method is called at BUILD if L</active> is true. To defer
-initialization, simply set L</active> to false.
-
-If the provided action against a particular endpoint fails, a connect_error
-event will be emitted
 
 =head1 ACKNOWLEDGEMENTS
 

@@ -37,7 +37,7 @@ my %WriteMakefileArgs = (
     "ZeroMQ::Context" => 0,
     "ZeroMQ::Socket" => 0
   },
-  "VERSION" => "1.130560",
+  "VERSION" => "1.130710",
   "test" => {
     "TESTS" => "t/*.t"
   }

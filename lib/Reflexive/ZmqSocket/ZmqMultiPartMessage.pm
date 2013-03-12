@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::ZmqMultiPartMessage;
 {
-  $Reflexive::ZmqSocket::ZmqMultiPartMessage::VERSION = '1.130560';
+  $Reflexive::ZmqSocket::ZmqMultiPartMessage::VERSION = '1.130710';
 }
 
 #ABSTRACT: The event emitted when a multipart message is received
@@ -37,7 +37,7 @@ Reflexive::ZmqSocket::ZmqMultiPartMessage - The event emitted when a multipart m
 
 =head1 VERSION
 
-version 1.130560
+version 1.130710
 
 =head1 DESCRIPTION
 

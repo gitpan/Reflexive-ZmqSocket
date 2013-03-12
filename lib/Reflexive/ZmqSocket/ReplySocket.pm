@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::ReplySocket;
 {
-  $Reflexive::ZmqSocket::ReplySocket::VERSION = '1.130560';
+  $Reflexive::ZmqSocket::ReplySocket::VERSION = '1.130710';
 }
 
 #ABSTRACT: ZMQ_REP socket type based subclass
@@ -25,7 +25,7 @@ Reflexive::ZmqSocket::ReplySocket - ZMQ_REP socket type based subclass
 
 =head1 VERSION
 
-version 1.130560
+version 1.130710
 
 =head1 DESCRIPTION
 

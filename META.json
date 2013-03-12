@@ -5,7 +5,7 @@
       "Steffen Mueller <smueller@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -56,6 +56,6 @@
          "url" : "http://github.com/nperez/reflexive-zmq.git"
       }
    },
-   "version" : "1.130560"
+   "version" : "1.130710"
 }
 

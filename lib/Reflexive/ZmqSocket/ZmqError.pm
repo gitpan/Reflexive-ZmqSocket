@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::ZmqError;
 {
-  $Reflexive::ZmqSocket::ZmqError::VERSION = '1.130560';
+  $Reflexive::ZmqSocket::ZmqError::VERSION = '1.130710';
 }
 
 #ABSTRACT: The event emitted when errors occur
@@ -43,7 +43,7 @@ Reflexive::ZmqSocket::ZmqError - The event emitted when errors occur
 
 =head1 VERSION
 
-version 1.130560
+version 1.130710
 
 =head1 DESCRIPTION
 

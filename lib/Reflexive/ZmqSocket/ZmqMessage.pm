@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::ZmqMessage;
 {
-  $Reflexive::ZmqSocket::ZmqMessage::VERSION = '1.130560';
+  $Reflexive::ZmqSocket::ZmqMessage::VERSION = '1.130710';
 }
 
 #ABSTRACT: The event emitted when a single message is received
@@ -29,7 +29,7 @@ Reflexive::ZmqSocket::ZmqMessage - The event emitted when a single message is re
 
 =head1 VERSION
 
-version 1.130560
+version 1.130710
 
 =head1 PUBLIC_ATTRIBUTES
 

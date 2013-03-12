@@ -1,6 +1,6 @@
 package Reflexive::ZmqSocket::RouterSocket;
 {
-  $Reflexive::ZmqSocket::RouterSocket::VERSION = '1.130560';
+  $Reflexive::ZmqSocket::RouterSocket::VERSION = '1.130710';
 }
 
 #ABSTRACT: ZMQ_ROUTER socket type based subclass
@@ -25,7 +25,7 @@ Reflexive::ZmqSocket::RouterSocket - ZMQ_ROUTER socket type based subclass
 
 =head1 VERSION
 
-version 1.130560
+version 1.130710
 
 =head1 DESCRIPTION
 
